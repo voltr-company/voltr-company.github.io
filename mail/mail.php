@@ -10,7 +10,6 @@ if(isset($_GET['name']) && isset($_GET['email']) && isset($_GET['message']) && (
 	$to_email = "business@nocaptechnology.com"; //RECEIVER EMAIL ADDRESS
 	$to_name = "Nocap website query"; //RECEIVER NAME
 	$subject = "New Contact Query";
-	
 	$sender_name = $_GET['name'];
 	$from_mail = $_GET['email'];	
 	$sender_message = $_GET['message'];
