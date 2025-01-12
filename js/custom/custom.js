@@ -163,7 +163,7 @@ $(document).on('ready', function() {
                 errorClass: 'error',
                 submitHandler: function(form) {
                     $.ajax({
-                        type: "POST",
+                        type: "GET",
                         url: "mail/mail.php",
                         data: $(form).serialize(),
                         success: function(data) {

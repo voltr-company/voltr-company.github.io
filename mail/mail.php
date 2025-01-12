@@ -5,30 +5,30 @@
 require 'phpmailer/PHPMailerAutoload.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
-if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && ( isset($_POST['website']) || isset($_POST['phone']) || isset($_POST['subject']) ) )  {
+if(isset($_GET['name']) && isset($_GET['email']) && isset($_GET['message']) && ( isset($_GET['website']) || isset($_GET['phone']) || isset($_GET['subject']) ) )  {
 	//Set who the message is to be sent to
 	$to_email = "business@nocaptechnology.com"; //RECEIVER EMAIL ADDRESS
 	$to_name = "Nocap website query"; //RECEIVER NAME
 	$subject = "New Contact Query";
 	
-	$sender_name = $_POST['name'];
-	$from_mail = $_POST['email'];	
-	$sender_message = $_POST['message'];
+	$sender_name = $_GET['name'];
+	$from_mail = $_GET['email'];	
+	$sender_message = $_GET['message'];
 	
 	$sender_subject = '';
 	$sender_website = '';
 	$sender_phone = '';	
 	
-	if( isset($_POST['subject']) ){
-		$sender_subject = 'SENDER SUBJECT: ' . $_POST['subject'] . "</br>";
+	if( isset($_GET['subject']) ){
+		$sender_subject = 'SENDER SUBJECT: ' . $_GET['subject'] . "</br>";
 	}
 	
-	if( isset($_POST['website']) ){
-		$sender_website = 'SENDER WEBSITE: ' . $_POST['website'] . "</br>";
+	if( isset($_GET['website']) ){
+		$sender_website = 'SENDER WEBSITE: ' . $_GET['website'] . "</br>";
 	}
 	
-	if( isset($_POST['phone']) ){
-		$sender_phone = 'SENDER PHONE NUMBER: ' . $_POST['phone'] . "</br>";
+	if( isset($_GET['phone']) ){
+		$sender_phone = 'SENDER PHONE NUMBER: ' . $_GET['phone'] . "</br>";
 	}		
 		
 	$mail->SetFrom( $from_mail , $sender_name );
