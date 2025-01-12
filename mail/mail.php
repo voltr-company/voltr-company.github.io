@@ -7,8 +7,8 @@ require 'phpmailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && ( isset($_POST['website']) || isset($_POST['phone']) || isset($_POST['subject']) ) )  {
 	//Set who the message is to be sent to
-	$to_email = ""; //RECEIVER EMAIL ADDRESS
-	$to_name = ""; //RECEIVER NAME
+	$to_email = "business@nocaptechnology.com"; //RECEIVER EMAIL ADDRESS
+	$to_name = "Nocap website query"; //RECEIVER NAME
 	$subject = "New Contact Query";
 	
 	$sender_name = $_POST['name'];
